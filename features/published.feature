@@ -23,6 +23,6 @@ Feature: Unpublished blog articles
     Given a successfully built app at "published-app"
     When I cd to "build"
     Then the following files should not exist:
-      | 2012/16/19/draft-article.html |
+      | 2012/06/19/draft-article.html |
     Then the following files should exist:
       | 2011/01/01/new-article.html   |
