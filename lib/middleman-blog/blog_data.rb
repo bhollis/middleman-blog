@@ -120,6 +120,9 @@ module Middleman
             article = @app.sitemap.find_resource_by_path(article_path)
             raise "Article for #{resource.path} not found" if article.nil?
 
+            # Skip files that belong to articles that have "published: false"
+            next unless @app.environment == :development || article.published?
+
             # The subdir path is the article path with the index file name
             # or file extension stripped off.
             resource.destination_path = options.permalink.
